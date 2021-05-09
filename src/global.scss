@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,26 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+//my styles
+
+html {
+  font-size: 10px;
+}
+
+ion-content {
+  font-family: "Poppins", sans-serif;
+}
+.search {
+  padding-left: 0;
+  & .searchbar-input-container .searchbar-input {
+    background-color: rgb(5, 20, 33);
+    border-radius: 10px;
+  }
+}
+ion-segment {
+  background-color: transparent;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

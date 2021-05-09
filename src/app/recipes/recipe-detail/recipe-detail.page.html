@@ -1,16 +1,33 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>recipe-detail</ion-title>
+<ion-header mode="md">
+  <ion-toolbar  >
+    <ion-title>{{loadedRecipe.title}}</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/recipes">
-
-      </ion-back-button>
+      <ion-back-button  icon="chevron-back" defaultHref="/recipes"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon  slot="icon-only" style="font-size: 2.8rem; margin-right: 1rem;" name="heart-outline"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [fullscreen]='true'  >
+  <div class="recipe">
+    <img [src]="loadedRecipe.imageUrl" alt="">
 
-  {{loadedRecipe.title}}
+    <div class="recipe__transparent">
+      <div class="recipe__details">
+        <h2>{{loadedRecipe.title}}</h2>
+        <p class="recipe__desc">{{loadedRecipe.description}}</p>
+        <p class="recipe__rating">
+          <ion-icon name="star"></ion-icon>
+          {{loadedRecipe.rating}}
+        </p>
+      </div>
+      <div class="recipe__icon">
+        <ion-icon name="restaurant"></ion-icon>
+        <ion-icon name="shield-checkmark"></ion-icon>
+      </div>
+    </div>
 
+  </div>
 </ion-content>
