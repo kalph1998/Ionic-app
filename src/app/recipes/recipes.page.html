@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Recipes
+      Sasta Zomato
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,37 +9,35 @@
 <ion-content class="ion-padding">
   <h1>
     Find the best <br />
-    Recipe for you
+    Dish for you
   </h1>
-  <ion-searchbar
-    class="search"
- 
-    placeholder="Find your Recipe"
-  ></ion-searchbar>
+  <ion-searchbar class="search" placeholder="Find your Dish"></ion-searchbar>
 
   <ion-grid fixed>
     <ion-row>
       <ion-col size="12">
-        <ion-segment scrollable >
+        <ion-segment scrollable>
           <p class="scroll_cat active">Indian</p>
           <p class="scroll_cat">Chinese</p>
           <p class="scroll_cat">Italian</p>
           <p class="scroll_cat">Spanish</p>
           <p class="scroll_cat">Lebanese</p>
           <p class="scroll_cat">Mexican</p>
-         
         </ion-segment>
       </ion-col>
     </ion-row>
   </ion-grid>
 
-
   <ion-grid class="recipes">
     <ion-row>
-      <ion-col size="6" *ngFor="let recipe of  recipes" [routerLink]="['./',recipe.id]" >
+      <ion-col
+        size="6"
+        *ngFor="let recipe of  recipes"
+        [routerLink]="['./',recipe.id]"
+      >
         <div class="recipe">
           <div class="recipe__img">
-            <img [src]="recipe.imageUrl" alt="">
+            <img [src]="recipe.imageUrl" alt="" />
             <span>
               <ion-icon name="star"></ion-icon>
               {{recipe.rating}}
@@ -48,23 +46,13 @@
           <h2 class="recipe__title">{{recipe.title}}</h2>
           <p class="recipe__desc">{{recipe.description}}</p>
           <div class="recipe__price">
-            <p><span>₹</span> {{recipe.price}}  </p>
+            <p><span>₹</span> {{recipe.price}}</p>
             <button>
               <ion-icon slot="icon-only" name="add-outline"></ion-icon>
             </button>
           </div>
         </div>
       </ion-col>
-    
     </ion-row>
   </ion-grid>
-
-  <!-- <ion-list *ngFor="let recipe of  recipes" [routerLink]="['./',recipe.id]">
-    <ion-item>
-      <ion-avatar>
-        <ion-img [src]="recipe.imageUrl"></ion-img>
-      </ion-avatar>
-      <ion-label class="ion-padding">{{recipe.title}}</ion-label>
-    </ion-item>
-  </ion-list> -->
 </ion-content>

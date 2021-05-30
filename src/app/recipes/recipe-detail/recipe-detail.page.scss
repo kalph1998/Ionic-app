@@ -6,11 +6,129 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    bottom: -40px;
-    position: absolute;
-    width: 100%;
+    margin-top: -70px;
     border-radius: 30px;
-    padding: 0 20px;
+    padding: 12px 20px;
     backdrop-filter: blur(15px);
+  }
+  &__details {
+    & h2 {
+      margin: 0;
+      font-weight: 500;
+    }
+  }
+  &__desc {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 200;
+  }
+  &__rating {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    padding-top: 10px;
+    margin: 0;
+    & ion-icon {
+      margin-right: 1rem;
+      color: var(--color-primary);
+    }
+  }
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(5, 20, 33);
+    padding: 5px;
+    border-radius: 8px;
+    color: rgb(216, 216, 216);
+    & h6 {
+      margin: 0;
+      font-size: 0.8rem;
+      padding-top: 2px;
+    }
+  }
+  &__type {
+    background-color: rgb(5, 20, 33);
+    border-radius: 8px;
+    color: rgb(216, 216, 216);
+    & p {
+      padding: 6px;
+    }
+  }
+
+  &__body {
+    padding: 10px;
+  }
+  &__description {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: rgb(216, 216, 216);
+  }
+
+  &__longDesc {
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+  &__quantity {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  &__quant {
+    width: 100%;
+    background-color: rgb(5, 20, 33);
+    border-radius: 8px;
+    padding: 1rem 0;
+    font-weight: 500;
+    &--active {
+      color: var(--color-primary);
+      border: 1px solid var(--color-primary);
+    }
+  }
+
+  &__footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    margin-bottom: 20px;
+    width: 100%;
+    align-items: center;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  &__price {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 20%;
+    align-items: center;
+    & p:first-child {
+      font-size: 1.2rem;
+      color: rgb(216, 216, 216);
+      font-weight: 200;
+      margin: 0;
+    }
+    & p:last-child {
+      font-size: 1.8rem;
+      margin: 0;
+      & span {
+        color: var(--color-primary);
+      }
+    }
+  }
+  &__buy {
+    display: flex;
+    flex-basis: 72%;
+
+    & button {
+      background-color: var(--color-primary);
+      border-radius: 12px;
+      width: 100%;
+      padding: 12px 0;
+    }
   }
 }

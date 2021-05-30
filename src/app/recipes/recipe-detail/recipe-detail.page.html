@@ -1,18 +1,26 @@
 <ion-header mode="md">
-  <ion-toolbar  >
+  <ion-toolbar>
     <ion-title>{{loadedRecipe.title}}</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button  icon="chevron-back" defaultHref="/recipes"></ion-back-button>
+      <ion-back-button
+        icon="chevron-back"
+        defaultHref="/recipes"
+      ></ion-back-button>
     </ion-buttons>
     <ion-buttons slot="end">
-      <ion-icon  slot="icon-only" style="font-size: 2.8rem; margin-right: 1rem;" name="heart-outline"></ion-icon>
+      <ion-icon
+        (click)="addToFav()"
+        slot="icon-only"
+        style="font-size: 2.8rem; margin-right: 1rem;"
+        [name]="isFavourite ? 'heart':'heart-outline'"
+      ></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]='true'  >
+<ion-content [fullscreen]="true">
   <div class="recipe">
-    <img [src]="loadedRecipe.imageUrl" alt="">
+    <img [src]="loadedRecipe.imageUrl" alt="" />
 
     <div class="recipe__transparent">
       <div class="recipe__details">
@@ -20,14 +28,51 @@
         <p class="recipe__desc">{{loadedRecipe.description}}</p>
         <p class="recipe__rating">
           <ion-icon name="star"></ion-icon>
-          {{loadedRecipe.rating}}
+          {{loadedRecipe.rating}} stars
         </p>
       </div>
-      <div class="recipe__icon">
-        <ion-icon name="restaurant"></ion-icon>
-        <ion-icon name="shield-checkmark"></ion-icon>
+      <div class="recipe__icons">
+        <div class="recipe__top">
+          <div class="recipe__icon">
+            <ion-icon name="restaurant"></ion-icon>
+            <h6>Tasty</h6>
+          </div>
+          <div class="recipe__icon">
+            <ion-icon name="shield-checkmark"></ion-icon>
+            <h6>Safe</h6>
+          </div>
+        </div>
+        <div class="recipe__type">
+          <p>Medium spicy</p>
+        </div>
       </div>
     </div>
-
+    <div class="recipe__body">
+      <h6 class="recipe__description">
+        Description
+      </h6>
+      <p class="recipe__longDesc">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
+        consectetur inventore est, veniam ex doloremque a voluptates. Deserunt,
+        eum cupiditate.
+      </p>
+      <h6 class="recipe__description">
+        Quantity
+      </h6>
+      <div class="recipe__quantity">
+        <button class="recipe__quant recipe__quant--active">10</button>
+        <button class="recipe__quant">20</button>
+        <button class="recipe__quant">30</button>
+      </div>
+    </div>
+  </div>
+  <div class="recipe__footer">
+    <div class="recipe__price">
+      <p class="recipe__p">Price</p>
+      <p><span>₹</span> {{loadedRecipe.price}}</p>
+    </div>
+    <div class="recipe__buy">
+      <button>Buy now</button>
+    </div>
   </div>
 </ion-content>
